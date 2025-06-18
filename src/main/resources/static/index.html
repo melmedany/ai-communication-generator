@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Email Generator</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+</head>
+<body>
+<div class="container">
+    <section class="intro">
+        <h2> Compose a Polished Email in Seconds</h2>
+        <p>
+            Need to send a thoughtful email? Just select a <strong>template</strong> — whether you're
+            <em>missing an event</em> or <em>arriving late</em> — and choose the <strong>tone</strong> that best fits
+            your message.
+            Fill in the details, click <strong>Generate Email</strong>, and you'll instantly receive a well-crafted
+            email you can use with confidence.
+        </p>
+    </section>
+
+    <form id="emailForm" class="form-grid">
+        <div class="left-column">
+            <label for="template">Template</label>
+            <select id="template" name="template" required>
+                <option value="LATE">Late for Event</option>
+                <option value="MISSED">Missing Event</option>
+            </select>
+
+            <div id="dateGroup" class="conditional-group">
+                <label for="date">Date</label>
+                <input type="text" id="date" name="date"/>
+            </div>
+
+            <div id="arrivalTimeGroup" class="conditional-group">
+                <label for="arrivalTime">Arrival Time</label>
+                <input type="text" id="arrivalTime" name="arrivalTime"/>
+            </div>
+
+            <label for="recipientName">Recipient Name</label>
+            <input type="text" id="recipientName" name="recipientName" required/>
+
+            <label for="event">Event</label>
+            <input type="text" id="event" name="event" required/>
+
+            <label for="reason">Reason</label>
+            <input type="text" id="reason" name="reason" required/>
+
+            <label for="senderName">Sender Name</label>
+            <input type="text" id="senderName" name="senderName" required/>
+
+            <label for="senderRole">Sender Role</label>
+            <input type="text" id="senderRole" name="senderRole" required/>
+
+            <label for="tone">Tone</label>
+            <select id="tone" name="tone">
+                <option value="formal">Formal</option>
+                <option value="apologetic">Apologetic</option>
+                <option value="friendly">Friendly</option>
+                <option value="empathetic">Empathetic</option>
+                <option value="frustrated">Frustrated</option>
+                <option value="angry">Angry</option>
+            </select>
+
+            <button type="submit">Generate Email</button>
+        </div>
+
+        <div class="right-column">
+            <div id="loading" class="conditional-group">
+                <div class="spinner"></div>
+                Generating email, please wait...
+            </div>
+            <div id="result" class="conditional-group">
+                <label for="output">Generated Email</label>
+                <textarea id="output" readonly rows="20"></textarea>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+

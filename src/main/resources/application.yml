@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: AI Email Generator
+  config:
+    import: optional:file:.env[.properties]
+
+  ai:
+    openai:
+      base-url: https://api.bonzai.iodigital.com/universal
+      api-key: ${API_KEY}
+      chat:
+        options:
+          http-headers:
+            api-key: ${API_KEY}
+        completions-path: /chat/completions
+
+
+weather-api:
+  base-url: https://api.weatherapi.com/
+  api-key: ${WEATHER_API_KEY}
