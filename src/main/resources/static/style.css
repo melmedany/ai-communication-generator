@@ -165,3 +165,131 @@ textarea {
         grid-template-columns: 1fr;
     }
 }
+
+/* Debug panel */
+.page-wrapper {
+    display: flex;
+    position: relative;
+}
+
+.page-wrapper .container {
+    flex: 1;
+    transition: margin-right 0.3s ease;
+}
+
+.debug-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 300px;
+    background: #1e293b;
+    color: #e2e8f0;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+.debug-panel.collapsed {
+    transform: translateX(100%);
+}
+
+.debug-toggle {
+    position: absolute;
+    left: -40px;
+    top: 12px;
+    width: 36px;
+    height: 36px;
+    background: #1e293b;
+    color: #e2e8f0;
+    border: none;
+    border-radius: 6px 0 0 6px;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: -2px 0 6px rgba(0, 0, 0, 0.15);
+}
+
+.debug-toggle:hover {
+    background: #334155;
+}
+
+.debug-content {
+    padding: 1rem;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.debug-content h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1rem;
+    color: #93c5fd;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 0.5rem;
+}
+
+.debug-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.health-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.health-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    background: #64748b; /* default gray */
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.15) inset;
+}
+
+.health-dot.up {
+    background: #10b981; /* green */
+}
+
+.health-dot.down {
+    background: #ef4444; /* red */
+}
+
+.health-dot.unknown {
+    background: #64748b; /* gray */
+}
+
+.health-label {
+    font-size: 0.8rem;
+    color: #cbd5e1;
+}
+
+.debug-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.75rem;
+}
+
+.debug-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #94a3b8;
+    margin-bottom: 0.15rem;
+}
+
+.debug-value {
+    font-size: 0.9rem;
+    color: #f1f5f9;
+    word-break: break-all;
+}

@@ -1,0 +1,15 @@
+spring:
+  config:
+    import: optional:file:.env[.properties]
+  ai:
+    model:
+      chat: openai
+      embedding: openai
+    openai:
+      base-url: ${OPEN_AI_BASE_URL}
+      api-key: ${OPEN_AI_API_KEY}
+      chat:
+        options:
+          http-headers:
+            api-key: ${API_KEY}
+        completions-path: /chat/completions
