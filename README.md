@@ -1,6 +1,6 @@
 # AI Communication Generator
 
-A production-inspired demo that shows how to build a **safe, context-aware AI communication system** using Java, Spring Boot, and Spring AI.
+A hackathon-inspired demo that shows how to build a **safe, context-aware AI communication system** using Java, Spring Boot, and Spring AI.
 
 Whether you're apologising for missing a meeting because of a "production incident" (we all know what that means) or explaining you'll be late because of traffic, this app has your back — professionally.
 
